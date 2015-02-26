@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.1'
+version = '0.1+pillow'
 name='ocupy'
 
 setup(name=name,
@@ -15,7 +15,7 @@ setup(name=name,
     * Lower and upper bound calculation for prediction quality of
       attention models.
     * RPC Client/Server for parallel task execution on a grid
-    * Evaluation (with cross-validation) of attention models 
+    * Evaluation (with cross-validation) of attention models
     """,
     license='GPL v.2, see LICENSE',
     author='WhiteMatter Labs GmbH',
@@ -39,7 +39,7 @@ setup(name=name,
     install_requires=[
       'numpy',
       'scipy',
-      'PIL',
+      'pillow',
       'h5py'
     ],
     test_suite='ocupy.tests',
