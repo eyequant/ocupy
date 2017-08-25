@@ -46,7 +46,7 @@ def prediction_scores(prediction, fm, **kw):
         Tuple of prediction scores. The order of the scores is determined
         by order of measures.scores.
     """
-    if prediction == None:
+    if prediction is None:
         return [np.NaN for measure in scores]
     results = []
     for measure in scores:
@@ -112,13 +112,13 @@ def kldiv(p, q, distp = None, distq = None, scale_factor = 1):
             Determines the size of FDM computed from distq or distp.
 
     """
-    assert q != None or distq != None, "Either q or distq have to be given"
-    assert p != None or distp != None, "Either p or distp have to be given"
+    assert q is not None or distq is not None, "Either q or distq have to be given"
+    assert p is not None or distp is not None, "Either p or distp have to be given"
 
     try:
-        if p == None: 
+        if p is None: 
             p = compute_fdm(distp, scale_factor = scale_factor)
-        if q == None:
+        if q is None:
             q = compute_fdm(distq, scale_factor = scale_factor)
     except RuntimeError:
         return np.NaN
